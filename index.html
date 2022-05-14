@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Videos</title>
 </head>
+
 <body>
   <ul class="videos">
     <li data-time="5:43">
@@ -181,14 +183,28 @@
       Video 58
     </li>
   </ul>
-<script>
-</script>
+
+
+  <script>
+
+    const timeNodes = Array.from(document.querySelectorAll('[data-time]'));
+
+    const seconds = timeNodes
+      .map(node => node.dataset.time)
+      .map(timeCode => {
+        const [mins, secs] = timeCode.split(':').map(parseFloat);
+        return (mins * 60) + secs;
+        console.log(mins, secs);
+      })
+
+  </script>
 </body>
+
 </html>
 
-    © 2022 GitHub, Inc.
+© 2022 GitHub, Inc.
 
-    Terms
-    Privacy
-    Security
-    Status
+Terms
+Privacy
+Security
+Status
